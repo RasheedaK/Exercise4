@@ -10,7 +10,7 @@ public class NavigatorTest {
         Position position=new Position(1,2, 'N');
         Rover rover=new Rover(roverPosition);
         Navigator navigator=new Navigator();
-        assertEquals(position,navigator.move(rover.getPosition(),"L"));
+        assertEquals(position,navigator.move(roverPosition,"L"));
     }
     @Test
     public void shouldNotReturnPositonAs12EIfRoverIsAt12EForInstructionL() {
@@ -18,7 +18,7 @@ public class NavigatorTest {
         Position position=new Position(1,2, 'E');
         Rover rover=new Rover(roverPosition);
         Navigator navigator=new Navigator();
-        assertNotEquals(position,navigator.move(rover.getPosition(),"L"));
+        assertNotEquals(position,navigator.move(roverPosition,"L"));
     }
     @Test
     public void shouldReturnPositonAs12SIfRoverIsAt12EForInstructionR() {
@@ -26,7 +26,7 @@ public class NavigatorTest {
         Position position=new Position(1,2, 'S');
         Rover rover=new Rover(roverPosition);
         Navigator navigator=new Navigator();
-        assertEquals(position,navigator.move(rover.getPosition(),"R"));
+        assertEquals(position,navigator.move(roverPosition,"R"));
     }
     @Test
     public void shouldReturnPositonAs14NIfRoverIsAt14WForInstructionR() {
@@ -34,7 +34,7 @@ public class NavigatorTest {
         Position position=new Position(1,4, 'N');
         Rover rover=new Rover(roverPosition);
         Navigator navigator=new Navigator();
-        assertEquals(position,navigator.move(rover.getPosition(),"R"));
+        assertEquals(position,navigator.move(roverPosition,"R"));
     }
     @Test
     public void shouldReturnPositonAs04WIfRoverIsAt14WForInstructionM() {
@@ -42,6 +42,6 @@ public class NavigatorTest {
         Position position=new Position(0,4, 'W');
         Rover rover=new Rover(roverPosition);
         Navigator navigator=new Navigator();
-        assertEquals(position,navigator.move(rover.getPosition(),"M"));
+        assertEquals(position,navigator.move(roverPosition,"M"));
     }
 }

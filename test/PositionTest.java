@@ -29,4 +29,9 @@ public class PositionTest {
         Position position=new Position(1,2, 'N');
         assertTrue('N'==position.getDirection());
     }
+    @Test
+    public void returnXcordinateAs2OnCallingIncrementX() {
+        Position position=new Position(1,2, 'N');
+        assertTrue(2==position.moveRight());
+    }
 }

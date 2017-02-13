@@ -40,18 +40,19 @@ class Position {
         return yCoordinate;
     }
 
-    int incrementX() {
+    int moveRight() {
         return xCoordinate+1;
     }
 
-    int decrementX() {
+    int moveLeft() {
         return xCoordinate-1;
     }
 
-    int incrementY() {
+    int moveUp() {
         return yCoordinate+1;
     }
-    int decrementY() {
+
+    int moveDown() {
         return yCoordinate-1;
     }
 }

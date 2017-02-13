@@ -6,7 +6,7 @@ class Rover {
         this.position = position;
     }
 
-    Position getPosition() {
-        return position;
+    Position getPosition(Navigator navigator, String instruction) {
+        return navigator.move(position, instruction);
     }
 }
