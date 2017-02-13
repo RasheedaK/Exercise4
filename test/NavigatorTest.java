@@ -36,4 +36,12 @@ public class NavigatorTest {
         Navigator navigator=new Navigator();
         assertEquals(position,navigator.move(rover.getPosition(),"R"));
     }
+    @Test
+    public void shouldReturnPositonAs04WIfRoverIsAt14WForInstructionM() {
+        Position roverPosition=new Position(1,4, 'W');
+        Position position=new Position(0,4, 'W');
+        Rover rover=new Rover(roverPosition);
+        Navigator navigator=new Navigator();
+        assertEquals(position,navigator.move(rover.getPosition(),"M"));
+    }
 }

@@ -6,9 +6,20 @@ class Navigator {
             else if(instruction.charAt(i)=='R')
                 position=turnRight(position);
             else
-                position=new Position(1,2,'E');
+                position=takeStep(position);
         }
         return position;
+    }
+
+    private Position takeStep(Position position) {
+        if(position.getDirection()=='E')
+            return new Position(position.incrementX(),position.getYcoordinate(),'E');
+        if(position.getDirection()=='W')
+            return new Position(position.decrementX(),position.getYcoordinate(),'W');
+        if(position.getDirection()=='N')
+            return new Position(position.getXcoordinate(),position.incrementY(),'N');
+        else
+            return new Position(position.getXcoordinate(),position.decrementY(),'S');
     }
 
     private Position turnLeft(Position position) {
