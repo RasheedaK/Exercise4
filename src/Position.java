@@ -1,10 +1,12 @@
 class Position {
     private final int xCoordinate;
     private final int yCoordinate;
+    private final char direction;
 
-    Position(int xCoordinate, int yCoordinate) {
+    Position(int xCoordinate, int yCoordinate, char direction) {
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
+        this.direction = direction;
     }
 
     @Override
@@ -14,13 +16,15 @@ class Position {
 
         Position position = (Position) o;
 
-        return xCoordinate == position.xCoordinate && yCoordinate == position.yCoordinate;
+        if (xCoordinate != position.xCoordinate) return false;
+        return yCoordinate == position.yCoordinate && direction == position.direction;
     }
 
     @Override
     public int hashCode() {
         int result = xCoordinate;
         result = 31 * result + yCoordinate;
+        result = 31 * result + (int) direction;
         return result;
     }
 }
