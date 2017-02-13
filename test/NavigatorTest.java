@@ -26,6 +26,14 @@ public class NavigatorTest {
         Position position=new Position(1,2, 'S');
         Rover rover=new Rover(roverPosition);
         Navigator navigator=new Navigator();
-        assertNotEquals(position,navigator.move(rover.getPosition(),"R"));
+        assertEquals(position,navigator.move(rover.getPosition(),"R"));
+    }
+    @Test
+    public void shouldReturnPositonAs14NIfRoverIsAt14WForInstructionR() {
+        Position roverPosition=new Position(1,4, 'W');
+        Position position=new Position(1,4, 'N');
+        Rover rover=new Rover(roverPosition);
+        Navigator navigator=new Navigator();
+        assertEquals(position,navigator.move(rover.getPosition(),"R"));
     }
 }

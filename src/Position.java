@@ -27,4 +27,16 @@ class Position {
         result = 31 * result + (int) direction;
         return result;
     }
+
+    char getDirection() {
+        return direction;
+    }
+
+    int getXcoordinate() {
+        return xCoordinate;
+    }
+
+    int getYcoordinate() {
+        return yCoordinate;
+    }
 }
