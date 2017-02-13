@@ -1,12 +1,12 @@
 class Rover {
-    private final RoverPosition position;
+    private final Position position;
 
-    Rover(RoverPosition position) {
+    Rover(Position position) {
 
         this.position = position;
     }
 
-    static RoverPosition getPosition() {
-        return new RoverPosition(1, 2);
+    Position getPosition() {
+        return position;
     }
 }

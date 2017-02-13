@@ -1,8 +1,8 @@
-class RoverPosition {
+class Position {
     private final int xCoordinate;
     private final int yCoordinate;
 
-    RoverPosition(int xCoordinate, int yCoordinate) {
+    Position(int xCoordinate, int yCoordinate) {
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
     }
@@ -12,7 +12,7 @@ class RoverPosition {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        RoverPosition position = (RoverPosition) o;
+        Position position = (Position) o;
 
         return xCoordinate == position.xCoordinate && yCoordinate == position.yCoordinate;
     }
