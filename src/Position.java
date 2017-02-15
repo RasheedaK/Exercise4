@@ -1,12 +1,9 @@
 class Position {
     private final int xCoordinate;
     private final int yCoordinate;
-    private final char direction;
-
-    Position(int xCoordinate, int yCoordinate, char direction) {
+    Position(int xCoordinate, int yCoordinate) {
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
-        this.direction = direction;
     }
 
     @Override
@@ -17,47 +14,34 @@ class Position {
         Position position = (Position) o;
 
         if (xCoordinate != position.xCoordinate) return false;
-        return yCoordinate == position.yCoordinate && direction == position.direction;
+        return yCoordinate == position.yCoordinate;
     }
 
     @Override
     public int hashCode() {
         int result = xCoordinate;
         result = 31 * result + yCoordinate;
-        result = 31 * result + (int) direction;
         return result;
     }
 
-    char getDirection() {
-        return direction;
-    }
-
-    int getXcoordinate() {
-        return xCoordinate;
-    }
-
-    int getYcoordinate() {
-        return yCoordinate;
-    }
-
     Position getRightPosition() {
-        return new Position(this.xCoordinate + 1, this.yCoordinate, this.getDirection());
+        return new Position(this.xCoordinate + 1, this.yCoordinate);
     }
 
     Position getLeftPosition() {
-        return new Position(this.xCoordinate - 1, this.yCoordinate, this.getDirection());
+        return new Position(this.xCoordinate - 1, this.yCoordinate);
     }
 
     Position getTopPosition() {
-        return new Position(this.xCoordinate , this.yCoordinate + 1, this.getDirection());
+        return new Position(this.xCoordinate , this.yCoordinate + 1);
     }
 
     Position getDownPosition() {
-        return new Position(this.xCoordinate, this.yCoordinate - 1, this.getDirection());
+        return new Position(this.xCoordinate, this.yCoordinate - 1);
     }
 
     @Override
     public String toString() {
-        return xCoordinate+" "+yCoordinate+" "+direction;
+        return xCoordinate+" "+yCoordinate;
     }
 }

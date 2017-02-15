@@ -34,4 +34,8 @@ class Direction {
     Direction getWest() {
         return new Direction('W');
     }
+
+    char getDirection() {
+        return direction;
+    }
 }

@@ -1,5 +1,3 @@
-import java.util.Dictionary;
-
 class Rover {
     private Position position;
     private Direction direction;
@@ -15,44 +13,44 @@ class Rover {
     void explore(String instruction) {
         for (int i = 0; i < instruction.length(); i++) {
             if (instruction.charAt(i) == 'L')
-                position = turnLeft();
+                direction = turnLeft();
             else if (instruction.charAt(i) == 'R')
-                position = turnRight();
+                direction = turnRight();
             else
                 position = moveForward();
         }
     }
 
     private Position moveForward() {
-        if (position.getDirection() == 'E')
+        if (direction.getDirection() == 'E')
             return position.getRightPosition();
-        if (position.getDirection() == 'W')
+        if (direction.getDirection() == 'W')
             return position.getLeftPosition();
-        if (position.getDirection() == 'N')
+        if (direction.getDirection() == 'N')
             return position.getTopPosition();
         else
             return position.getDownPosition();
     }
 
-    private Position turnLeft() {
-        if (position.getDirection() == 'E')
-            return new Position(position.getXcoordinate(), position.getYcoordinate(), 'N');
-        if (position.getDirection() == 'W')
-            return new Position(position.getXcoordinate(), position.getYcoordinate(), 'S');
-        if (position.getDirection() == 'N')
-            return new Position(position.getXcoordinate(), position.getYcoordinate(), 'W');
+    private Direction turnLeft() {
+        if (direction.getDirection() == 'E')
+            return direction.getNorth();
+        if (direction.getDirection() == 'W')
+            return direction.getSouth();
+        if (direction.getDirection() == 'N')
+            return direction.getEast();
         else
-            return new Position(position.getXcoordinate(), position.getYcoordinate(), 'E');
+            return direction.getWest();
     }
 
-    private Position turnRight() {
-        if (position.getDirection() == 'E')
-            return new Position(position.getXcoordinate(), position.getYcoordinate(), 'S');
-        if (position.getDirection() == 'W')
-            return new Position(position.getXcoordinate(), position.getYcoordinate(), 'N');
-        if (position.getDirection() == 'N')
-            return new Position(position.getXcoordinate(), position.getYcoordinate(), 'E');
+    private Direction turnRight() {
+        if (direction.getDirection() == 'E')
+            return direction.getSouth();
+        if (direction.getDirection() == 'W')
+            return direction.getNorth();
+        if (direction.getDirection() == 'N')
+            return direction.getEast();
         else
-            return new Position(position.getXcoordinate(), position.getYcoordinate(), 'W');
+            return direction.getWest();
     }
 }

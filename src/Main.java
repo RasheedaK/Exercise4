@@ -8,6 +8,6 @@ public class Main {
         int xCoordinate=Integer.parseInt(strings[0]);
         int yCoordinate=Integer.parseInt(strings[1]);
         char dir=strings[2].charAt(0);
-        Position position=new Position(xCoordinate,yCoordinate,dir);
+        Position position=new Position(xCoordinate,yCoordinate);
     }
 }
