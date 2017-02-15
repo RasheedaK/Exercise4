@@ -1,6 +1,7 @@
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class RoverTest {
    @Test
@@ -38,5 +39,37 @@ public class RoverTest {
         rover.explore("M");
         String expectedString="4 2";
         assertEquals(expectedString,rover.getPosition());
+    }
+    @Test
+    public void testDirectionNIfRoverIsAt32EForInstrutionL() {
+        Position roverPosition = new Position(3, 2);
+        Direction direction= new Direction('E');
+        Rover rover = new Rover(roverPosition,direction);
+        rover.explore("L");
+        assertTrue('N'==rover.getDirection());
+    }
+    @Test
+    public void testDirectionSIfRoverIsAt32WForInstrutionL() {
+        Position roverPosition = new Position(3, 2);
+        Direction direction= new Direction('W');
+        Rover rover = new Rover(roverPosition,direction);
+        rover.explore("L");
+        assertTrue('S'==rover.getDirection());
+    }
+    @Test
+    public void testDirectionWIfRoverIsAt32NForInstrutionL() {
+        Position roverPosition = new Position(3, 2);
+        Direction direction= new Direction('N');
+        Rover rover = new Rover(roverPosition,direction);
+        rover.explore("L");
+        assertTrue('W'==rover.getDirection());
+    }
+    @Test
+    public void testDirectionEIfRoverIsAt32SForInstrutionL() {
+        Position roverPosition = new Position(3, 2);
+        Direction direction= new Direction('S');
+        Rover rover = new Rover(roverPosition,direction);
+        rover.explore("L");
+        assertTrue('E'==rover.getDirection());
     }
 }

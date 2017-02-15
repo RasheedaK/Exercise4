@@ -41,9 +41,9 @@ class Rover {
         if (direction.getDirection() == 'W')
             return direction.getSouth();
         if (direction.getDirection() == 'N')
-            return direction.getEast();
-        else
             return direction.getWest();
+        else
+            return direction.getEast();
     }
 
     private Direction turnRight() {
