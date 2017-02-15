@@ -1,37 +1,55 @@
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+
 public class PositionTest {
     @Test
     public void testEqualPositions() {
-        Position position=new Position(1,2, 'N');
-        Position position1=new Position(1,2, 'N');
-        assertEquals(position,position1);
+        Position position = new Position(1, 2, 'N');
+        Position position1 = new Position(1, 2, 'N');
+        assertEquals(position, position1);
     }
+
     @Test
     public void testUnEqualPositions() {
-        Position position=new Position(2,2, 'N');
-        Position position1=new Position(1,2, 'N');
-        assertNotEquals(position,position1);
+        Position position = new Position(2, 2, 'N');
+        Position position1 = new Position(1, 2, 'N');
+        assertNotEquals(position, position1);
     }
-    @Test
-    public void testxCorodinateFor1IfPositionIs12N() {
-        Position position=new Position(1,2, 'N');
-        assertTrue(1==position.getXcoordinate());
-    }
-    @Test
-    public void testyCorodinateFor2IfPositionIs12N() {
-        Position position=new Position(1,2, 'N');
-        assertTrue(2==position.getYcoordinate());
-    }
+
     @Test
     public void testDirectionForNIfPositionIs12N() {
-        Position position=new Position(1,2, 'N');
-        assertTrue('N'==position.getDirection());
+        Position position = new Position(1, 2, 'N');
+        assertTrue('N' == position.getDirection());
     }
+
     @Test
-    public void returnXcordinateAs2OnCallingIncrementX() {
-        Position position=new Position(1,2, 'N');
-        assertTrue(2==position.moveRight());
+    public void tes22NAsRightPositionFor12N() {
+        Position position = new Position(1, 2, 'N');
+        Position expectedPosition = new Position(2, 2, 'N');
+        assertEquals(expectedPosition, position.getRightPosition());
     }
+
+    @Test
+    public void tes02NAsLeftPositionFor12N() {
+        Position position = new Position(1, 2, 'N');
+        Position expectedPosition = new Position(0, 2, 'N');
+        assertEquals(expectedPosition, position.getLeftPosition());
+    }
+
+    @Test
+    public void tes13NAsTopPositionFor12N() {
+        Position position = new Position(1, 2, 'N');
+        Position expectedPosition = new Position(1, 3, 'N');
+        assertEquals(expectedPosition, position.getTopPosition());
+    }
+
+    @Test
+    public void tes13NAsDownPositionFor12N() {
+        Position position = new Position(1, 2, 'N');
+        Position expectedPosition = new Position(1, 1, 'N');
+        assertEquals(expectedPosition, position.getDownPosition());
+    }
+
+
 }

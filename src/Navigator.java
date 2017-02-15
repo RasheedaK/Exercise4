@@ -2,27 +2,27 @@ class Navigator {
     Position move(Position position,String instruction) {
         for(int i=0;i<instruction.length();i++){
             if(instruction.charAt(i)=='L')
-                position=turnLeft(position);
+                position= turnRoverLeft(position);
             else if(instruction.charAt(i)=='R')
-                position=turnRight(position);
+                position= turnRoverRight(position);
             else
-                position=takeStep(position);
+                position= moveRoverAhead(position);
         }
         return position;
     }
 
-    private Position takeStep(Position position) {
+    Position moveRoverAhead(Position position) {
         if(position.getDirection()=='E')
-            return new Position(position.moveRight(),position.getYcoordinate(),'E');
+            return position.getRightPosition();
         if(position.getDirection()=='W')
-            return new Position(position.moveLeft(),position.getYcoordinate(),'W');
+            return position.getLeftPosition();
         if(position.getDirection()=='N')
-            return new Position(position.getXcoordinate(),position.moveUp(),'N');
+            return position.getTopPosition();
         else
-            return new Position(position.getXcoordinate(),position.moveDown(),'S');
+            return position.getDownPosition();
     }
 
-    private Position turnLeft(Position position) {
+    Position turnRoverLeft(Position position) {
         if(position.getDirection()=='E')
             return new Position(position.getXcoordinate(),position.getYcoordinate(),'N');
         if(position.getDirection()=='W')
@@ -32,7 +32,7 @@ class Navigator {
         else
             return new Position(position.getXcoordinate(),position.getYcoordinate(),'E');
     }
-    private Position turnRight(Position position) {
+    Position turnRoverRight(Position position) {
         if(position.getDirection()=='E')
             return new Position(position.getXcoordinate(),position.getYcoordinate(),'S');
         if(position.getDirection()=='W')

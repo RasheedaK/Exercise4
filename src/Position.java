@@ -40,19 +40,19 @@ class Position {
         return yCoordinate;
     }
 
-    int moveRight() {
-        return xCoordinate+1;
+    Position getRightPosition() {
+        return new Position(this.xCoordinate + 1, this.yCoordinate, this.getDirection());
     }
 
-    int moveLeft() {
-        return xCoordinate-1;
+    Position getLeftPosition() {
+        return new Position(this.xCoordinate - 1, this.yCoordinate, this.getDirection());
     }
 
-    int moveUp() {
-        return yCoordinate+1;
+    Position getTopPosition() {
+        return new Position(this.xCoordinate , this.yCoordinate + 1, this.getDirection());
     }
 
-    int moveDown() {
-        return yCoordinate-1;
+    Position getDownPosition() {
+        return new Position(this.xCoordinate, this.yCoordinate - 1, this.getDirection());
     }
 }
