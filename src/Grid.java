@@ -7,11 +7,11 @@ class Grid {
         max_y = max_Y;
     }
 
-    int getYCoordinate() {
+    int getMaxYCoordinate() {
         return max_y;
     }
 
-    int getXCoordinate() {
+    int getMaxXCoordinate() {
         return max_x;
     }
 }
