@@ -1,5 +1,5 @@
 class Direction {
-    char direction;
+    private final char direction;
     Direction(char direction){
         this.direction=direction;
     }
