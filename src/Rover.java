@@ -9,6 +9,9 @@ class Rover {
     String getPosition() {
         return position.toString();
     }
+    char getDirection() {
+        return direction.getDirection();
+    }
 
     void explore(String instruction) {
         for (int i = 0; i < instruction.length(); i++) {
