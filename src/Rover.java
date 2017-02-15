@@ -1,9 +1,11 @@
+import java.util.Dictionary;
+
 class Rover {
     private Position position;
-
-    Rover(Position position) {
+    private Direction direction;
+    Rover(Position position,Direction direction) {
         this.position = position;
-
+        this.direction=direction;
     }
 
     String getPosition() {

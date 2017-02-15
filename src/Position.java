@@ -58,6 +58,6 @@ class Position {
 
     @Override
     public String toString() {
-        return xCoordinate+" "+yCoordinate+" "+direction ;
+        return xCoordinate+" "+yCoordinate+" "+direction;
     }
 }
