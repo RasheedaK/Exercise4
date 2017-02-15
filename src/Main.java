@@ -9,9 +9,5 @@ public class Main {
         int yCoordinate=Integer.parseInt(strings[1]);
         char dir=strings[2].charAt(0);
         Position position=new Position(xCoordinate,yCoordinate,dir);
-        Position position1=new Rover(position).getPosition(new Navigator(),"LMLMLMLMM");
-        System.out.println(position1.getDirection());
-        System.out.println(position1.getXcoordinate());
-        System.out.println(position1.getYcoordinate());
     }
 }

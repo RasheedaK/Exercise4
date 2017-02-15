@@ -55,4 +55,9 @@ class Position {
     Position getDownPosition() {
         return new Position(this.xCoordinate, this.yCoordinate - 1, this.getDirection());
     }
+
+    @Override
+    public String toString() {
+        return xCoordinate+" "+yCoordinate+" "+direction ;
+    }
 }

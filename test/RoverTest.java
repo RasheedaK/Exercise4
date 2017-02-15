@@ -1,18 +1,38 @@
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.mockito.Mockito.*;
 
 public class RoverTest {
-    @Test
-    public void returnEqualsIfPositionIsAt12AndRoverIsAt12() {
-        Position roverPosition = new Position(1, 2, 'W');
-        Position expectedPosition = new Position(0, 2, 'W');
+   @Test
+    public void testPosition12NIfRoverIsAt12EForInstrutionL() {
+        Position roverPosition = new Position(1, 2, 'E');
         Rover rover = new Rover(roverPosition);
-        Navigator dummyNavigator=mock(Navigator.class);
-        when(dummyNavigator.move(roverPosition,"M")).thenReturn(new Position(0,2,'W'));
-        assertEquals(expectedPosition, rover.getPosition(dummyNavigator,"M"));
-        verify(dummyNavigator,times(1)).move(roverPosition,"M");
+        rover.explore("L");
+        String expectedString="1 2 N";
+        assertEquals(expectedString,rover.getPosition());
+    }
+    @Test
+    public void testPosition13NIfRoverIsAt12EForInstrutionM() {
+        Position roverPosition = new Position(1, 2, 'N');
+        Rover rover = new Rover(roverPosition);
+        rover.explore("M");
+        String expectedString="1 3 N";
+        assertEquals(expectedString,rover.getPosition());
+    }
+    @Test
+    public void testPosition32SIfRoverIsAt32EForInstrutionR() {
+        Position roverPosition = new Position(3, 2, 'E');
+        Rover rover = new Rover(roverPosition);
+        rover.explore("R");
+        String expectedString="3 2 S";
+        assertEquals(expectedString,rover.getPosition());
+    }
+    @Test
+    public void testPosition32SIfRoverIsAt32EForInstrutionRLLR() {
+        Position roverPosition = new Position(3, 2, 'E');
+        Rover rover = new Rover(roverPosition);
+        rover.explore("R");
+        String expectedString="3 2 S";
+        assertEquals(expectedString,rover.getPosition());
     }
 }
