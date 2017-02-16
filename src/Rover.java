@@ -11,51 +11,38 @@ class Rover {
         return position.toString();
     }
 
-    char getDirection() {
-        return direction.getDirection();
+    String getDirection() {
+        return direction.toString();
     }
 
-    void explore(String instruction, Grid grid) {
+    void explore(String instruction, Grid grid, DirectionTeller directionTeller) {
         for (int i = 0; i < instruction.length(); i++) {
             if (instruction.charAt(i) == 'L')
-                direction = turnLeft();
+                direction = turnLeft(directionTeller);
             else if (instruction.charAt(i) == 'R')
-                direction = turnRight();
+                direction = turnRight(directionTeller);
             else
                 position = moveForward(grid);
         }
     }
 
     private Position moveForward(Grid grid) {
-        if (direction.getDirection() == Direction.EAST)
+        if (direction.toString().equals(Direction.EAST))
             return position.getRightPosition(grid);
-        if (direction.getDirection() == Direction.WEST)
+        if (direction.toString().equals(Direction.WEST))
             return position.getLeftPosition(grid);
-        if (direction.getDirection() == Direction.NORTH)
+        if (direction.toString().equals(Direction.NORTH))
             return position.getTopPosition(grid);
         else
             return position.getDownPosition(grid);
     }
 
-    private Direction turnLeft() {
-        if (direction.getDirection() == Direction.EAST)
-            return direction.getNorth();
-        if (direction.getDirection() == Direction.WEST)
-            return direction.getSouth();
-        if (direction.getDirection() == Direction.NORTH)
-            return direction.getWest();
-        else
-            return direction.getEast();
+    private Direction turnLeft(DirectionTeller directionTeller) {
+        return directionTeller.getDirection(direction.toString()).getLeftDirection();
+
     }
 
-    private Direction turnRight() {
-        if (direction.getDirection() == Direction.EAST)
-            return direction.getSouth();
-        if (direction.getDirection() == Direction.WEST)
-            return direction.getNorth();
-        if (direction.getDirection() == Direction.NORTH)
-            return direction.getEast();
-        else
-            return direction.getWest();
+    private Direction turnRight(DirectionTeller directionTeller) {
+        return directionTeller.getDirection(direction.toString()).getRightDirection();
     }
 }
