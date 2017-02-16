@@ -9,7 +9,8 @@ public class RoverTest {
         Position roverPosition = new Position(1, 1);
         Direction direction = new Direction('N');
         Rover rover = new Rover(roverPosition, direction);
-        rover.explore("M");
+        Grid grid=new Grid(5,5);
+        rover.explore("M",grid);
         String expectedString = "1 2";
         assertEquals(expectedString, rover.getPosition());
     }
@@ -19,7 +20,8 @@ public class RoverTest {
         Position roverPosition = new Position(1, 2);
         Direction direction = new Direction('W');
         Rover rover = new Rover(roverPosition, direction);
-        rover.explore("M");
+        Grid grid=new Grid(5,5);
+        rover.explore("M",grid);
         String expectedString = "0 2";
         assertEquals(expectedString, rover.getPosition());
     }
@@ -29,7 +31,8 @@ public class RoverTest {
         Position roverPosition = new Position(3, 2);
         Direction direction = new Direction('S');
         Rover rover = new Rover(roverPosition, direction);
-        rover.explore("M");
+        Grid grid=new Grid(5,5);
+        rover.explore("M",grid);
         String expectedString = "3 1";
         assertEquals(expectedString, rover.getPosition());
     }
@@ -39,7 +42,8 @@ public class RoverTest {
         Position roverPosition = new Position(3, 2);
         Direction direction = new Direction('E');
         Rover rover = new Rover(roverPosition, direction);
-        rover.explore("M");
+        Grid grid=new Grid(5,5);
+        rover.explore("M",grid);
         String expectedString = "4 2";
         assertEquals(expectedString, rover.getPosition());
     }
@@ -49,7 +53,8 @@ public class RoverTest {
         Position roverPosition = new Position(3, 2);
         Direction direction = new Direction('E');
         Rover rover = new Rover(roverPosition, direction);
-        rover.explore("L");
+        Grid grid=new Grid(5,5);
+        rover.explore("L",grid);
         assertTrue('N' == rover.getDirection());
     }
 
@@ -58,7 +63,8 @@ public class RoverTest {
         Position roverPosition = new Position(3, 2);
         Direction direction = new Direction('W');
         Rover rover = new Rover(roverPosition, direction);
-        rover.explore("L");
+        Grid grid=new Grid(5,5);
+        rover.explore("L",grid);
         assertTrue('S' == rover.getDirection());
     }
 
@@ -67,7 +73,8 @@ public class RoverTest {
         Position roverPosition = new Position(3, 2);
         Direction direction = new Direction('N');
         Rover rover = new Rover(roverPosition, direction);
-        rover.explore("L");
+        Grid grid=new Grid(5,5);
+        rover.explore("L",grid);
         assertTrue('W' == rover.getDirection());
     }
 
@@ -76,7 +83,8 @@ public class RoverTest {
         Position roverPosition = new Position(3, 2);
         Direction direction = new Direction('S');
         Rover rover = new Rover(roverPosition, direction);
-        rover.explore("L");
+        Grid grid=new Grid(5,5);
+        rover.explore("L",grid);
         assertTrue('E' == rover.getDirection());
     }
 }

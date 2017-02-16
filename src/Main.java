@@ -11,7 +11,8 @@ public class Main {
         Position position = new Position(xCoordinate, yCoordinate);
         Direction direction = new Direction(roverDirection);
         Rover rover = new Rover(position, direction);
-        rover.explore("LMLMLMLMM");
+        Grid grid=new Grid(5,5);
+        rover.explore("LMLMLMLMM",grid);
         System.out.println(rover.getPosition());
         System.out.println(rover.getDirection());
     }

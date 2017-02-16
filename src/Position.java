@@ -24,20 +24,36 @@ class Position {
         return result;
     }
 
-    Position getRightPosition() {
-        return new Position(this.xCoordinate + 1, this.yCoordinate);
+    Position getRightPosition(Position position, Grid grid) {
+        Position rightPosition = new Position(this.xCoordinate + 1, this.yCoordinate);
+        if (grid.isValidPosition(rightPosition)) {
+            return rightPosition;
+        }
+        return position;
     }
 
-    Position getLeftPosition() {
-        return new Position(this.xCoordinate - 1, this.yCoordinate);
+    Position getLeftPosition(Position position, Grid grid) {
+        Position leftPosition = new Position(this.xCoordinate - 1, this.yCoordinate);
+        if (grid.isValidPosition(leftPosition)) {
+            return leftPosition;
+        }
+        return position;
     }
 
-    Position getTopPosition() {
-        return new Position(this.xCoordinate, this.yCoordinate + 1);
+    Position getTopPosition(Position position, Grid grid) {
+        Position topPosition = new Position(this.xCoordinate, this.yCoordinate + 1);
+        if (grid.isValidPosition(topPosition)) {
+            return topPosition;
+        }
+        return position;
     }
 
-    Position getDownPosition() {
-        return new Position(this.xCoordinate, this.yCoordinate - 1);
+    Position getDownPosition(Position position,Grid grid) {
+        Position downPosition = new Position(this.xCoordinate, this.yCoordinate - 1);
+        if (grid.isValidPosition(downPosition)) {
+            return downPosition;
+        }
+        return position;
     }
 
     @Override

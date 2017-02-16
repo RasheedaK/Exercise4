@@ -15,26 +15,26 @@ class Rover {
         return direction.getDirection();
     }
 
-    void explore(String instruction) {
+    void explore(String instruction,Grid grid) {
         for (int i = 0; i < instruction.length(); i++) {
             if (instruction.charAt(i) == 'L')
                 direction = turnLeft();
             else if (instruction.charAt(i) == 'R')
                 direction = turnRight();
             else
-                position = moveForward();
+                position = moveForward(grid);
         }
     }
 
-    private Position moveForward() {
+    private Position moveForward(Grid grid) {
         if (direction.getDirection() == Direction.EAST)
-            return position.getRightPosition();
+            return position.getRightPosition(this.position,grid);
         if (direction.getDirection() == Direction.WEST)
-            return position.getLeftPosition();
+            return position.getLeftPosition(this.position,grid);
         if (direction.getDirection() == Direction.NORTH)
-            return position.getTopPosition();
+            return position.getTopPosition(this.position,grid);
         else
-            return position.getDownPosition();
+            return position.getDownPosition(this.position,grid);
     }
 
     private Direction turnLeft() {
