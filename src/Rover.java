@@ -1,3 +1,5 @@
+import com.sun.media.sound.InvalidFormatException;
+
 class Rover {
     private Position position;
     private Direction direction;
@@ -15,14 +17,16 @@ class Rover {
         return direction.toString();
     }
 
-    void explore(String instruction, Grid grid, DirectionTeller directionTeller) {
+    void explore(String instruction, Grid grid, DirectionTeller directionTeller) throws InvalidFormatException {
         for (int i = 0; i < instruction.length(); i++) {
             if (instruction.charAt(i) == 'L')
                 direction = turnLeft(directionTeller);
             else if (instruction.charAt(i) == 'R')
                 direction = turnRight(directionTeller);
-            else
+            else if (instruction.charAt(i) == 'M')
                 position = moveForward(grid);
+            else
+                throw new InvalidFormatException();
         }
     }
 
