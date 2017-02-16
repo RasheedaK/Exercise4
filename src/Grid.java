@@ -7,15 +7,7 @@ class Grid {
         this.max_y = max_Y;
     }
 
-    int getMaxYCoordinate() {
-        return max_y;
-    }
-
-    int getMaxXCoordinate() {
-        return max_x;
-    }
-
     boolean isValidPosition(Position position) {
-        return true;
+        return (position.getXcoordinate() <= this.max_x && position.getYcoordinate() <= this.max_y);
     }
 }

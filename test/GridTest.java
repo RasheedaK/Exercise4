@@ -4,20 +4,16 @@ import static org.junit.Assert.*;
 
 public class GridTest {
     @Test
-    public void testForMaxXCoordinateOfGrid() {
+    public void testForValidPositionOfGrid() {
         Grid grid = new Grid(4, 5);
-        assertTrue(4 == grid.getMaxXCoordinate());
+        Position position = new Position(3, 2);
+        assertTrue(grid.isValidPosition(position));
     }
 
     @Test
-    public void testForMaxYCoordinateOfGrid() {
+    public void testForInValidPositionOfGrid() {
         Grid grid = new Grid(4, 5);
-        assertTrue(5 == grid.getMaxYCoordinate());
-    }
-    @Test
-    public void testForValidPositionOfGrid() {
-        Grid grid = new Grid(4, 5);
-        Position position=new Position(1,2);
-        assertTrue(grid.isValidPosition(position));
+        Position position = new Position(5, 5);
+        assertFalse(grid.isValidPosition(position));
     }
 }

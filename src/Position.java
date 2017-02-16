@@ -44,4 +44,12 @@ class Position {
     public String toString() {
         return xCoordinate + " " + yCoordinate;
     }
+
+    int getXcoordinate() {
+        return xCoordinate;
+    }
+
+    int getYcoordinate() {
+        return yCoordinate;
+    }
 }
