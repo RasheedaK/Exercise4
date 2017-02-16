@@ -9,5 +9,6 @@ class Grid {
 
     boolean isValidPosition(Position position) {
         return (position.getXcoordinate() <= this.max_x && position.getYcoordinate() <= this.max_y
-                && position.getXcoordinate()>=0 && position.getYcoordinate()>=0);}
+                && position.getXcoordinate() >= 0 && position.getYcoordinate() >= 0);
+    }
 }

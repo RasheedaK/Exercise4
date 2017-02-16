@@ -15,7 +15,7 @@ class Rover {
         return direction.getDirection();
     }
 
-    void explore(String instruction,Grid grid) {
+    void explore(String instruction, Grid grid) {
         for (int i = 0; i < instruction.length(); i++) {
             if (instruction.charAt(i) == 'L')
                 direction = turnLeft();
