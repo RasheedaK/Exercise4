@@ -1,14 +1,16 @@
 class Rover {
     private Position position;
     private Direction direction;
-    Rover(Position position,Direction direction) {
+
+    Rover(Position position, Direction direction) {
         this.position = position;
-        this.direction=direction;
+        this.direction = direction;
     }
 
     String getPosition() {
         return position.toString();
     }
+
     char getDirection() {
         return direction.getDirection();
     }

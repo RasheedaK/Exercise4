@@ -3,8 +3,8 @@ class Grid {
     private final int max_y;
 
     Grid(int max_X, int max_Y) {
-        max_x = max_X;
-        max_y = max_Y;
+        this.max_x = max_X;
+        this.max_y = max_Y;
     }
 
     int getMaxYCoordinate() {
@@ -13,5 +13,9 @@ class Grid {
 
     int getMaxXCoordinate() {
         return max_x;
+    }
+
+    boolean isValidPosition(Position position) {
+        return true;
     }
 }

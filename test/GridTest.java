@@ -5,12 +5,19 @@ import static org.junit.Assert.*;
 public class GridTest {
     @Test
     public void testForMaxXCoordinateOfGrid() {
-        Grid grid=new Grid(4,5);
-        assertTrue(4==grid.getMaxXCoordinate());
+        Grid grid = new Grid(4, 5);
+        assertTrue(4 == grid.getMaxXCoordinate());
     }
+
     @Test
     public void testForMaxYCoordinateOfGrid() {
-        Grid grid=new Grid(4,5);
-        assertTrue(5==grid.getMaxYCoordinate());
+        Grid grid = new Grid(4, 5);
+        assertTrue(5 == grid.getMaxYCoordinate());
+    }
+    @Test
+    public void testForValidPositionOfGrid() {
+        Grid grid = new Grid(4, 5);
+        Position position=new Position(1,2);
+        assertTrue(grid.isValidPosition(position));
     }
 }

@@ -1,6 +1,7 @@
 class Position {
     private final int xCoordinate;
     private final int yCoordinate;
+
     Position(int xCoordinate, int yCoordinate) {
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
@@ -13,8 +14,7 @@ class Position {
 
         Position position = (Position) o;
 
-        if (xCoordinate != position.xCoordinate) return false;
-        return yCoordinate == position.yCoordinate;
+        return xCoordinate == position.xCoordinate && yCoordinate == position.yCoordinate;
     }
 
     @Override
@@ -33,7 +33,7 @@ class Position {
     }
 
     Position getTopPosition() {
-        return new Position(this.xCoordinate , this.yCoordinate + 1);
+        return new Position(this.xCoordinate, this.yCoordinate + 1);
     }
 
     Position getDownPosition() {
@@ -42,6 +42,6 @@ class Position {
 
     @Override
     public String toString() {
-        return xCoordinate+" "+yCoordinate;
+        return xCoordinate + " " + yCoordinate;
     }
 }
