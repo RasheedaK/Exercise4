@@ -30,15 +30,17 @@ class Rover {
         }
     }
 
-    private Position moveForward(Grid grid) {
+    private Position moveForward(Grid grid) throws InvalidFormatException{
         if (direction.toString().equals(Direction.EAST))
             return position.getRightPosition(grid);
         if (direction.toString().equals(Direction.WEST))
             return position.getLeftPosition(grid);
         if (direction.toString().equals(Direction.NORTH))
             return position.getTopPosition(grid);
-        else
+        if (direction.toString().equals(Direction.SOUTH))
             return position.getDownPosition(grid);
+        else
+            throw new InvalidFormatException();
     }
 
     private Direction turnLeft(DirectionTeller directionTeller) {
