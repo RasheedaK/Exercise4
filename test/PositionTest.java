@@ -18,7 +18,7 @@ public class PositionTest {
     }
 
     @Test
-    public void test22NAsRightPositionFor12() {
+    public void test22AsRightPositionFor12() {
         Position position = new Position(1, 2);
         Position expectedPosition = new Position(2, 2);
         Grid grid=new Grid(5,5);
@@ -26,7 +26,7 @@ public class PositionTest {
     }
 
     @Test
-    public void test02NAsLeftPositionFor12() {
+    public void test02AsLeftPositionFor12() {
         Position position = new Position(1, 2);
         Position expectedPosition = new Position(0, 2);
         Grid grid=new Grid(5,5);
@@ -34,7 +34,7 @@ public class PositionTest {
     }
 
     @Test
-    public void test13NAsTopPositionFor12() {
+    public void test13AsTopPositionFor12() {
         Position position = new Position(1, 2);
         Position expectedPosition = new Position(1, 3);
         Grid grid=new Grid(5,5);
@@ -42,7 +42,7 @@ public class PositionTest {
     }
 
     @Test
-    public void test13NAsDownPositionFor12() {
+    public void test13AsDownPositionFor12() {
         Position position = new Position(1, 2);
         Position expectedPosition = new Position(1, 1);
         Grid grid=new Grid(5,5);
