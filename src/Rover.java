@@ -28,13 +28,13 @@ class Rover {
 
     private Position moveForward(Grid grid) {
         if (direction.getDirection() == Direction.EAST)
-            return position.getRightPosition(this.position,grid);
+            return position.getRightPosition(grid);
         if (direction.getDirection() == Direction.WEST)
-            return position.getLeftPosition(this.position,grid);
+            return position.getLeftPosition(grid);
         if (direction.getDirection() == Direction.NORTH)
-            return position.getTopPosition(this.position,grid);
+            return position.getTopPosition(grid);
         else
-            return position.getDownPosition(this.position,grid);
+            return position.getDownPosition(grid);
     }
 
     private Direction turnLeft() {

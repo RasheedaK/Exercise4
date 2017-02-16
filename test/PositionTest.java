@@ -18,11 +18,18 @@ public class PositionTest {
     }
 
     @Test
-    public void test22AsRightPositionFor12() {
+    public void test22AsRightPositionForPosition12() {
         Position position = new Position(1, 2);
         Position expectedPosition = new Position(2, 2);
         Grid grid=new Grid(5,5);
-        assertEquals(expectedPosition, position.getRightPosition(position,grid));
+        assertEquals(expectedPosition, position.getRightPosition(grid));
+    }
+    @Test
+    public void ShouldReturnSamePositonIfRightPositionIsOutOfGrid() {
+        Position position = new Position(5, 5);
+        Position expectedPosition = new Position(5, 5);
+        Grid grid=new Grid(5,5);
+        assertEquals(expectedPosition, position.getRightPosition(grid));
     }
 
     @Test
@@ -30,7 +37,14 @@ public class PositionTest {
         Position position = new Position(1, 2);
         Position expectedPosition = new Position(0, 2);
         Grid grid=new Grid(5,5);
-        assertEquals(expectedPosition, position.getLeftPosition(position,grid));
+        assertEquals(expectedPosition, position.getLeftPosition(grid));
+    }
+    @Test
+    public void ShouldReturnSamePositonIfLeftPositionIsOutOfGrid() {
+        Position position = new Position(0, 0);
+        Position expectedPosition = new Position(0, 0);
+        Grid grid=new Grid(5,5);
+        assertEquals(expectedPosition, position.getLeftPosition(grid));
     }
 
     @Test
@@ -38,7 +52,7 @@ public class PositionTest {
         Position position = new Position(1, 2);
         Position expectedPosition = new Position(1, 3);
         Grid grid=new Grid(5,5);
-        assertEquals(expectedPosition, position.getTopPosition(position,grid));
+        assertEquals(expectedPosition, position.getTopPosition(grid));
     }
 
     @Test
@@ -46,7 +60,7 @@ public class PositionTest {
         Position position = new Position(1, 2);
         Position expectedPosition = new Position(1, 1);
         Grid grid=new Grid(5,5);
-        assertEquals(expectedPosition, position.getDownPosition(position,grid));
+        assertEquals(expectedPosition, position.getDownPosition(grid));
     }
     @Test
     public void test3AsXcoordinateForPosition32() {
